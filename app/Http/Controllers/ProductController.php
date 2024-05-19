@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('kategori')->get(); // Mengambil produk dengan data kategori terkait
-        return view('backend.content.products.list', compact('products'));
+        return view('backend.content.product.list', compact('products'));
     }
 
     public function tambah()
@@ -23,7 +23,7 @@ class ProductController extends Controller
         // Fetch all categories
         $kategori = Kategori::all();
 
-        return view('backend.content.products.formTambah', compact('kategori'));
+        return view('backend.content.product.formTambah', compact('kategori'));
     }
 
     public function prosesTambah(Request $request)
