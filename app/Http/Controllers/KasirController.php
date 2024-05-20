@@ -19,7 +19,9 @@ class KasirController extends Controller
 
     public function searchProduct(Request $request)
     {
-        $product = Product::query()->where('barcode', $request->barcode)->first();
+        $product = Product::query()
+            ->where('barcode', $request->barcode)
+            ->first();
         if ($product === null) {
             return response()->json([], 404);
         }
@@ -51,12 +53,12 @@ class KasirController extends Controller
                 $it->id_product = $request->id_product[$i];
                 $it->price = $request->price[$i];
                 $it->qty = $request->qty[$i];
-                $it->total = (int)$it->price * (int)$it->qty;
+                $it->total = (int) $it->price * (int) $it->qty;
                 $it->save();
                 $subtotal += $it->total;
             }
             $transaction->subtotal = $subtotal;
-            $discount = $subtotal * (int)$request->discount / 100;
+            $discount = ($subtotal * (int) $request->discount) / 100;
             $transaction->discount = $request->discount;
             $transaction->total = $subtotal - $discount;
             $transaction->save();

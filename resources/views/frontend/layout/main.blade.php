@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,66 +14,72 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('assets-fe/css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets-fe/css/hero.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <style>
         /* Footer */
         /* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Footer Styles */
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-}
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
 
-.footer__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
+        .footer__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-.footer__logo img {
-    width: 100px;
-}
+        .footer__logo img {
+            width: 100px;
+        }
 
-.footer__links ul {
-    list-style-type: none;
-}
+        .footer__links ul {
+            list-style-type: none;
+        }
 
-.footer__links ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
+        .footer__links ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
 
-.footer__links ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+        .footer__links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.footer__social ul {
-    list-style-type: none;
-}
+        .footer__social ul {
+            list-style-type: none;
+        }
 
-.footer__social ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
+        .footer__social ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
 
-.footer__social ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-}
+        .footer__social ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-.footer__bottom {
-    margin-top: 20px;
-}
+        .footer__bottom {
+            margin-top: 20px;
+        }
 
         /* Footer End */
 
@@ -90,53 +97,68 @@
             padding-top: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
+
         .sidebar .navbar-toggler {
             border: none;
             outline: none;
             color: #000;
         }
+
         .sidebar .navbar-toggler-icon {
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
+
         .sidebar .nav-link {
             color: #000;
             font-size: 24px;
             margin: 10px 0;
         }
+
         .sidebar .nav-link:hover {
             color: #ff902a;
         }
+
         .content {
             margin-left: 80px;
             padding: 20px;
         }
+
         .navbar {
-            background-color: rgba(255, 255, 255, 0) !important; /* Transparansi 100% */
-            transition: background-color 0.3s ease-in-out; /* Efek transisi */
+            background-color: rgba(255, 255, 255, 0) !important;
+            /* Transparansi 100% */
+            transition: background-color 0.3s ease-in-out;
+            /* Efek transisi */
         }
+
         .navbar .nav-link {
             color: #000 !important;
             padding: 0 15px;
         }
+
         .navbar .nav-link:hover {
             color: #ff902a !important;
         }
+
         .navbar-brand {
             display: flex;
             align-items: center;
             gap: 5px;
             color: #000;
         }
+
         .navbar-brand span {
             font-size: 24px;
         }
+
         .navbar-toggler {
             border: none;
             color: #000;
         }
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
+
         .navbar-nav {
             margin: auto;
             display: flex;
@@ -145,9 +167,11 @@
             list-style-type: none;
             padding-left: 0;
         }
+
         .navbar-nav li {
             margin-right: 20px;
         }
+
         .navbar-nav li:last-child {
             margin-right: 0;
         }
@@ -158,7 +182,8 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse" id="sidebarMenu">
@@ -180,21 +205,25 @@
                     <span style="color: #ff902a;">O</span>
                     <span style="color: #00008B;"> Cafe</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        @foreach($menu as $dm)
-                            @if(sizeof($dm['itemMenu']) > 0)
+                        @foreach ($menu as $dm)
+                            @if (sizeof($dm['itemMenu']) > 0)
                                 <li class="nav-item dropdown">
-                                    <a href="{{ $dm['url'] }}" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                                    <a href="{{ $dm['url'] }}" class="nav-link dropdown-toggle" role="button"
+                                        data-bs-toggle="dropdown">
                                         {{ $dm['menu'] }}
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
-                                        @foreach($dm['itemMenu'] as $idm)
+                                        @foreach ($dm['itemMenu'] as $idm)
                                             <li>
-                                                <a href="{{ $idm['sub_menu_url'] }}" class="dropdown-item" target="{{ $idm['sub_menu_target'] }}">
+                                                <a href="{{ $idm['sub_menu_url'] }}" class="dropdown-item"
+                                                    target="{{ $idm['sub_menu_target'] }}">
                                                     {{ $idm['sub_menu_nama'] }}
                                                 </a>
                                             </li>
@@ -251,5 +280,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS -->
     <script src="{{ asset('assets-fe/js/scripts.js') }}"></script>
+    <script src="/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/assets/dist/js/adminlte.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+
 </html>
