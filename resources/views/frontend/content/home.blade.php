@@ -11,9 +11,8 @@
               class="text-dark dark:text-white"> one one one</span></h2>
           <p class="mb-10 font-medium leading-relaxed text-secondary">Biarkan setiap tegukan kopi mengingatkanmu akan berkat yang diberikan Tuhan setiap hari. <span class="font-bold text-dark dark:text-white">😊</span></p>
 
-          <a href="#"
-            class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Hubungi
-            Saya</a>
+          <a href="{{ route('home.product') }}"
+            class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Pesan sekarang</a>
         </div>
         <div class="w-full self-end px-4 lg:w-1/2">
           <div class="relative mt-10 lg:right-0 lg:mt-9">

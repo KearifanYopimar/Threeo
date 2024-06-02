@@ -14,6 +14,7 @@ class Product extends Model
         'Description',
         'image',
         'id_kategori',
+        'barcode'
     ];
 
     // Model Product

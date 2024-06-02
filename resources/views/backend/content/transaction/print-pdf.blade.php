@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Invoice {{$row->code}}</title>
+    <title>Invoice</title>
 </head>
 <style>
     body {
@@ -45,19 +45,19 @@
 <body>
 <div class="header">
     <h1>Invoice Belanja</h1>
-    <h2>{{$row->code}}</h2>
+
 </div>
 <hr>
 <table class="data">
     <tr>
         <th>Nama Barang</th>
-        <th>@</th>
+        <th style="text-align: right;">Subtotal</th>
         <th>Qty</th>
-        <th>Total</th>
+        <th style="text-align: right;">Total</th>
     </tr>
-    @foreach($row->ItemTransaction as $item)
+    @foreach($row as $item)
         <tr>
-            <td>{{$item->Product->name}}</td>
+            <td>{{$item->Product_Name}}</td>
             <td class="right">{{number_format($item->price)}}</td>
             <td class="right">{{$item->qty}}</td>
             <td class="right">{{number_format($item->price * $item->qty)}}</td>

@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home.index');
+Route::get('/product',[\App\Http\Controllers\HalamanController::class,'product'])->name('home.product');
+Route::post('/simpan',[\App\Http\Controllers\HalamanController::class,'simpan'])->name('home.simpan');
 Route::get('/berita/{id}',[\App\Http\Controllers\HomeController::class,'detailBerita'])->name('home.detailBerita');
 Route::get('/page{id}',[\App\Http\Controllers\HomeController::class,'detailPage'])->name('home.detailPage');
 Route::get('/berita',[\App\Http\Controllers\HomeController::class,'semuaBerita'])->name('home.berita');
@@ -81,8 +85,11 @@ Route::group(['middleware' => 'auth:user'], function(){
 
         Route::get('/kasir', [\App\Http\Controllers\KasirController::class, 'index'])->name('kasir.index')->middleware('auth:user');
         Route::post('/kasir/checkout', [\App\Http\Controllers\KasirController::class, 'checkout'])->name('kasir.checkout')->middleware('auth:user');
-        Route::post('/search-barcode', [\App\Http\Controllers\KasirController::class, 'searchProduct']);
-        Route::post('/insert', [\App\Http\Controllers\KasirController::class, 'insert']);
+        Route::post('/insert', [\App\Http\Controllers\KasirController::class, 'insert'])->name('kasir.insert');
+        Route::post('/kasir/search-product', [\App\Http\Controllers\KasirController::class, 'searchProduct']);
+
+        Route::get('/transaksi', [\App\Http\Controllers\TransaksiController::class, 'index'])->name('transaksi.index');
+        Route::get('/printPDF/{id}', [\App\Http\Controllers\TransaksiController::class, 'printPDF'])->name('transaksi.printPDF');
 
 
     });

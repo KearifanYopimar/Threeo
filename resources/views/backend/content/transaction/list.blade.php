@@ -12,7 +12,8 @@
                                 <th>No</th>
                                 <th>Kode</th>
                                 <th>Tanggal</th>
-                                <th>Total</th>
+                                <th class="text-right">Subtotal</th>
+                                <th class="text-right">Total</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -23,12 +24,13 @@
                                     <td>{{$counter++}}</td>
                                     <td>{{$row->code}}</td>
                                     <td>{{$row->date}}</td>
+                                    <td class="text-right">Rp {{$row->subtotal}}</td>
                                     <td class="text-right">Rp {{$row->total}}</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-info ">
                                             <i class="fas fa-eye  "></i>
                                         </a>
-                                        <a href="{{url("transaksi/$row->id/pdf")}}"
+                                        <a href="{{route('transaksi.printPDF', $row->id)}}"
                                            target="_blank"
                                            class="btn btn-sm btn-danger">
                                             <i class="fas fa-file-pdf  "></i>
