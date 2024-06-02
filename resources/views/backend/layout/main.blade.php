@@ -84,17 +84,17 @@
                     <span>Data User</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('page.index') }}">
-                    <i class="fas fa-fw fa-file"></i>
-                    <span>Data Page</span></a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="{{ route('page.index') }}">--}}
+{{--                    <i class="fas fa-fw fa-file"></i>--}}
+{{--                    <span>Data Page</span></a>--}}
+{{--            </li>--}}
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('menu.index') }}">
-                    <i class="fas fa-fw fa-bars"></i>
-                    <span>Data Menu</span></a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="{{ route('menu.index') }}">--}}
+{{--                    <i class="fas fa-fw fa-bars"></i>--}}
+{{--                    <span>Data Menu</span></a>--}}
+{{--            </li>--}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('product.index') }}">

@@ -5,51 +5,34 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <form action="{{ route('home.simpan') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Nama Customer</label>
-                                    <input type="text" name="nama_customers" class="form-control" placeholder="Masukan nama customers">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Kategories Product</label>
-                                    <select name="kategories_id" class="form-control" id="">
-                                        <option value="">Pilih Kategories</option>
-                                        @foreach ($kategori as $kategories)
-                                            <option value="{{ $kategories->id_kategori }}">{{ $kategories->nama_kategori }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Nama Product</label>
-                                    <select name="product_id" class="form-control" id="">
-                                        <option value="">Pilih Product</option>
-                                        @foreach ($prodcut as $produk)
-                                            <option value="{{$produk->id_produk}}">{{$produk->Product_Name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+
+                        <tr>
+                            <th>No</th>
+                            <th>Code</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @forelse($detailTransaction as $key => $item)
+                            <tr>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $item->code }}</td>
+                                <td>{{$item->date}}</td>
+                                <td>{{$item->price}}</td>
+                                <td>{{$item->qty}}</td>
+                                <td>{{$item->total}}</td>
+                            </tr>
+                        @empty
+
+                        @endforelse
+                        </tbody>
+                    </table>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:right-0 lg:mt-9">

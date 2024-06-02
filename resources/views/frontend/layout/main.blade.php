@@ -240,14 +240,14 @@
                         @endforeach --}}
                         <li>
                             <a href="{{route('home.index')}}" class="nav-link">Beranda</a>
-                        
+
                         </li>
                         <li>
-                            <a href="#" class="nav-link">Product</a>
-                            
+                            <a href="{{route('home.product')}}" class="nav-link">Product</a>
+
                         </li>
                         <li>
-                            <a href="#" class="nav-link">Transaction</a>
+                            <a href="{{route('home.transaction')}}" class="nav-link">Transaction</a>
                         </li>
                     </ul>
                 </div>

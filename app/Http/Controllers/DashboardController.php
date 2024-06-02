@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Product;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,14 +16,13 @@ class DashboardController extends Controller
     public function index()
     {
         // Fetching data
-        $totalBerita = Berita::count();
-        // Hilangkan kategori dari pengambilan data berita
-        $latestBerita = Berita::latest()->take(5)->get();
         $totalKategori = Kategori::count();
-        $totalUser = User::count();
+        $totalProduct = Product::count();
+        $totalTransaction = Transaction::count();
+        $totalBerita = Berita::count();
 
         // Returning view with data
-        return view('backend.content.dashboard', compact('totalBerita', 'totalKategori', 'totalUser', 'latestBerita'));
+        return view('backend.content.dashboard', compact('totalKategori', 'totalProduct', 'totalTransaction', 'totalBerita'));
     }
 
 

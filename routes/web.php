@@ -23,6 +23,7 @@ use App\Http\Controllers\TransaksiController;
 Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home.index');
 Route::get('/product',[\App\Http\Controllers\HalamanController::class,'product'])->name('home.product');
 Route::post('/simpan',[\App\Http\Controllers\HalamanController::class,'simpan'])->name('home.simpan');
+Route::get('/transaction',[\App\Http\Controllers\HalamanController::class,'transaction'])->name('home.transaction');
 Route::get('/berita/{id}',[\App\Http\Controllers\HomeController::class,'detailBerita'])->name('home.detailBerita');
 Route::get('/page{id}',[\App\Http\Controllers\HomeController::class,'detailPage'])->name('home.detailPage');
 Route::get('/berita',[\App\Http\Controllers\HomeController::class,'semuaBerita'])->name('home.berita');
